@@ -250,7 +250,7 @@ class LagrangianPolicy(BasePolicy):
 
                         for index_j in index_list:
                             sim_ij = torch.mean(cos(safety_loss_grad_list[index_i], safety_loss_grad_list[index_j])).item()
-                        sim_list.append(sim_ij)
+                            sim_list.append(sim_ij)
                         
                         if np.max(np.array(sim_list)) < self.sim_threshold and np.min(np.array(sim_list)) > -1 * self.conflicting_threshold:
                             index_list.append(index_i)
