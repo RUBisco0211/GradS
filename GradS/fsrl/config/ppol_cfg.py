@@ -181,3 +181,43 @@ class Mujoco20MCfg(MujocoBaseCfg):
 @dataclass
 class Mujoco10MCfg(MujocoBaseCfg):
     epoch: int = 500
+
+@dataclass
+class PG_safety_gymnasium_v2(TrainCfg):
+    task: str = "SafetyPointGoal0Gymnasium-v0"
+    safety_gymnasium_task: bool = True
+    short_task: str = "PG-v2"
+    project: str = "PG-v2"
+    cost_0_redundant_num: int = 1 
+    cost_1_redundant_num: int = 1
+    cost_2_redundant_num: int = 0
+
+@dataclass
+class PG_safety_gymnasium_v3(TrainCfg):
+    task: str = "SafetyPointGoal0Gymnasium-v0"
+    safety_gymnasium_task: bool = True
+    short_task: str = "PG-v3"
+    project: str = "PG-v3"
+    cost_0_redundant_num: int = 1 
+    cost_1_redundant_num: int = 1
+    cost_2_redundant_num: int = 1
+
+@dataclass
+class CG_safety_gymnasium_v2(TrainCfg):
+    task: str = "SafetyCarGoal0Gymnasium-v0"
+    safety_gymnasium_task: bool = True
+    short_task: str = "CG-v2"
+    project: str = "CG-v2"
+    cost_0_redundant_num: int = 1 
+    cost_1_redundant_num: int = 1
+    cost_2_redundant_num: int = 0
+
+@dataclass
+class CG_safety_gymnasium_v3(TrainCfg):
+    task: str = "SafetyCarGoal0Gymnasium-v0"
+    safety_gymnasium_task: bool = True
+    short_task: str = "CG-v3"
+    project: str = "CG-v3"
+    cost_0_redundant_num: int = 1 
+    cost_1_redundant_num: int = 1
+    cost_2_redundant_num: int = 1

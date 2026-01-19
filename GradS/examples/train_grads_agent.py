@@ -9,7 +9,7 @@ except ImportError:
     print("safety_gymnasium is not found.")
 import gymnasium as gym
 import pyrallis
-from tianshou.env import BaseVectorEnv, ShmemVectorEnv, SubprocVectorEnv
+from tianshou.env import BaseVectorEnv, ShmemVectorEnv, SubprocVectorEnv, DummyVectorEnv
 
 from fsrl.agent import PPOLagAgent
 from fsrl.config.ppol_cfg import (
@@ -19,6 +19,10 @@ from fsrl.config.ppol_cfg import (
     BC_v3,
     CC_v3,
     DC_v3,
+    PG_safety_gymnasium_v2,
+    PG_safety_gymnasium_v3,
+    CG_safety_gymnasium_v2,
+    CG_safety_gymnasium_v3,
     TrainCfg,
 )
 
@@ -33,6 +37,12 @@ TASK_TO_CFG = {
     "BC-v3": BC_v3,
     "CC-v3": CC_v3,
     "DC-v3": DC_v3,
+    
+    # safety gymnasium tasks
+    "PG-v2": PG_safety_gymnasium_v2,
+    "PG-v3": PG_safety_gymnasium_v3,
+    "CG-v2": CG_safety_gymnasium_v2,
+    "CG-v3": CG_safety_gymnasium_v3,
 }
 
 
